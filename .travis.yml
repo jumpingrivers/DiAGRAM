@@ -1,0 +1,21 @@
+language: r
+cache: packages
+
+
+notifications:
+  email:
+    recipients:
+     - alerts+diagram@gmail.com
+    on_success: change
+    on_failure: change
+
+r:
+  - release
+
+apt_packages:
+  - libglpk-dev
+
+before_script:
+    - Rscript -e 'install.packages("https://cran.r-project.org/src/contrib/Archive/gRain/gRain_1.3-0.tar.gz", repos=NULL, type="source")''
+
+r_github_packages: AnalytixWare/ShinySky
