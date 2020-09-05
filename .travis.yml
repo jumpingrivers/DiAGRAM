@@ -15,17 +15,16 @@ r:
 apt_packages:
   - libglpk-dev
 
-bioc_packages:
-  - graph
-  - grBase
+before_script:
+    - Rscript -e 'install.packages("https://cran.r-project.org/src/contrib/Archive/gRain/gRain_1.3-0.tar.gz", repos=NULL, type="source")''
 
 r_binary_packages:
   - shiny
   - dplyr
 
-before_script:
-    - Rscript -e 'install.packages("https://cran.r-project.org/src/contrib/Archive/gRain/gRain_1.3-0.tar.gz", repos=NULL, type="source")''
-
+bioc_packages:
+  - graph
+  - grBase
 
 r_github_packages: AnalytixWare/ShinySky
 
