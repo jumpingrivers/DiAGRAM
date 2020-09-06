@@ -17,8 +17,8 @@ apt_packages:
 
 before_install:
     - Rscript -e 'install.packages("BiocManager")'
-    - Rscript -e 'BiocManager::install(c("graph", "grBase"))'
-    - Rscript -e 'install.packages("https://cran.r-project.org/src/contrib/Archive/gRain/gRain_1.3-0.tar.gz", repos=NULL, type="source")''
+    - Rscript -e 'BiocManager::install(c("graph", "gRBase"))'
+    - Rscript -e 'install.packages("https://cran.r-project.org/src/contrib/Archive/gRain/gRain_1.3-0.tar.gz", repos=NULL, type="source")'
 
 r_binary_packages:
   - shiny
