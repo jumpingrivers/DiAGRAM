@@ -14,17 +14,24 @@ r:
 
 apt_packages:
   - libglpk-dev
+  - libnode-dev
 
+
+# Bioconductor bug - should be fixed soonish
+# https://travis-ci.community/t/in-r-version-4-0-0-library-path-not-writable/9744/15
+bioc_required: false
 before_install:
     - Rscript -e 'install.packages("BiocManager")'
     - Rscript -e 'BiocManager::install(c("graph", "gRBase", "RBGL", "Rgraphviz"))'
+
+# gRain is installed then we need to install on top
+before_script:
     - Rscript -e 'install.packages("https://cran.r-project.org/src/contrib/Archive/gRain/gRain_1.3-0.tar.gz", repos=NULL, type="source")'
 
 r_binary_packages:
   - shiny
   - dplyr
 
-bioc_required: false
 
 r_github_packages: AnalytixWare/ShinySky
 
