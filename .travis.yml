@@ -8,14 +8,17 @@ notifications:
     on_success: change
     on_failure: change
 
-
-
+# Annoying bug with Rcpp and R4.0.0 just now.
+# Should be fiexed soonish
 jobs:
   include:
     - r: oldrel
       repos:
         CRAN: https://packagemanager.rstudio.com/all/__linux__/xenial/latest
     - r: release
+    - r: devel
+      repos:
+        CRAN: https://packagemanager.rstudio.com/all/__linux__/xenial/latest
 
 apt_packages:
   - libglpk-dev
@@ -41,3 +44,8 @@ r_github_packages: AnalytixWare/ShinySky
 # Delete this when R package passes with no warnings
 script:
   - R CMD build .
+
+after_success:
+  - Rscript -e "if (Sys.getenv('TRAVIS_R_VERSION_STRING') == 'release') source('deploy_to_shinyapps.R')"
+
+
