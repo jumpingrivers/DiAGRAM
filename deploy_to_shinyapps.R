@@ -1,3 +1,7 @@
+if (!requireNamespace("rsconnect")) install.packages("rsconnect")
+if (!requireNamespace("stringr")) install.packages("stringr")
+if (!requireNamespace("cli")) install.packages("cli")
+
 deploy = function(account = "jumpingrivers", server = "shinyapps.io") {
   cli::cli_h1("Deploying app")
   rsconnect::setAccountInfo(name = account,
@@ -23,9 +27,7 @@ terminate = function(account = "jumpingrivers", server = "shinyapps.io") {
   cli::cli_alert_success("{appName} successfully terminated")
 }
 
-if (!requireNamespace("rsconnect")) install.packages("rsconnect")
-if (!requireNamespace("stringr")) install.packages("stringr")
-if (!requireNamespace("cli")) install.packages("cli")
+
 
 deploy()
 terminate()
