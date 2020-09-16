@@ -1,0 +1,13 @@
+question9:
+  node: Technical_Skills
+  type: multiple choice
+  definition: Bespoke digital preservation skills such as awareness of technological
+    trends, detailed knowledge of storage media, hardware and software, skills to
+    perform file format migration, skills to find emulating software etc?
+  text: "Please consider the following statements about digital preservation skills taken
+    from the DigCurV curriculum [framework for digital curation](https://www.digcurv.gla.ac.uk/skills.html). For each skill,
+    rate the level of skill in your organisation on the scale indicated: None,
+    Basic/is aware of, Intermediate/understands, or Advanced/is able to:"
+  detail:
+    - Apply appropriate technological solutions
+    - Digital preservation standards
